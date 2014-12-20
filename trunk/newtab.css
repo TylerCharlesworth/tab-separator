@@ -1,0 +1,138 @@
+.f0 {
+	font-family: "Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+	font-family: Aladin-Regular;
+	src: url(fonts/Aladin-Regular.ttf);
+}
+
+.f1 {
+	font-family: 'Aladin-Regular';
+}
+
+@font-face {
+	font-family: CinzelDecorative-Bold;
+	src: url(fonts/CinzelDecorative-Bold.ttf);
+}
+
+.f2 {
+	font-family: 'CinzelDecorative-Bold';
+}
+
+@font-face {
+	font-family: Condiment-Regular;
+	src: url(fonts/Condiment-Regular.ttf);
+}
+
+.f3 {
+	font-family: 'Condiment-Regular';
+}
+
+@font-face {
+	font-family: DawningofaNewDay;
+	src: url(fonts/DawningofaNewDay.ttf);
+}
+
+.f4 {
+	font-family: 'DawningofaNewDay';
+}
+
+@font-face {
+	font-family: FredokaOne-Regular;
+	src: url(fonts/FredokaOne-Regular.ttf);
+}
+
+.f5 {
+	font-family: 'FredokaOne-Regular';
+}
+
+@font-face {
+	font-family: GloriaHallelujah;
+	src: url(fonts/GloriaHallelujah.ttf);
+}
+
+.f6 {
+	font-family: 'GloriaHallelujah';
+}
+
+@font-face {
+	font-family: IndieFlower;
+	src: url(fonts/IndieFlower.ttf);
+}
+
+.f7 {
+	font-family: 'IndieFlower';
+}
+
+@font-face {
+	font-family: LoveYaLikeASister;
+	src: url(fonts/LoveYaLikeASister.ttf);
+}
+
+.f8 {
+	font-family: 'LoveYaLikeASister';
+}
+
+@font-face {
+	font-family: NovaMono;
+	src: url(fonts/NovaMono.ttf);
+}
+
+.f9 {
+	font-family: 'NovaMono';
+}
+
+@font-face {
+	font-family: PinyonScript-Regular;
+	src: url(fonts/PinyonScript-Regular.ttf);
+}
+
+.f10 {
+	font-family: 'PinyonScript-Regular';
+}
+
+@font-face {
+	font-family: Rancho-Regular;
+	src: url(fonts/Rancho-Regular.ttf);
+}
+
+.f11 {
+	font-family: 'Rancho-Regular';
+}
+
+@font-face {
+	font-family: ShareTechMono-Regular;
+	src: url(fonts/ShareTechMono-Regular.ttf);
+}
+
+.f12 {
+	font-family: 'ShareTechMono-Regular';
+}
+
+@font-face {
+	font-family: SueEllenFrancisco;
+	src: url(fonts/SueEllenFrancisco.ttf);
+}
+
+.f13 {
+	font-family: 'SueEllenFrancisco';
+}
+
+@font-face {
+	font-family: Ultra;
+	src: url(fonts/Ultra.ttf);
+}
+
+.f14 {
+	font-family: 'Ultra';
+}
+
+@font-face {
+	font-family: VT323-Regular;
+	src: url(fonts/VT323-Regular.ttf);
+}
+
+.f15 {
+	font-family: 'VT323-Regular';
+}

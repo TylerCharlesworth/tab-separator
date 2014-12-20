@@ -1,0 +1,5 @@
+body { width: 150px; }
+h2 { font-family: "Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif; font-size: small; text-decoration: underline; text-align: center; margin-bottom: 8px; }
+div { margin-bottom: 14px; }
+input[type="text"] { width: 110px; }
+input[type="text"].disabled { background-color: #ddd; color: gray; cursor: hand; }
