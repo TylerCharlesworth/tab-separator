@@ -12,7 +12,7 @@ chrome.tabs.onCreated.addListener(function (tab) {
     return
   }
 
-  if (tab.url && tab.url != "chrome://newtab/") {
+  if (tab.url != "chrome://newtab/") {
     return
   }
 
