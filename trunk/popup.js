@@ -37,11 +37,23 @@ function setTitle(title) {
 	});
 }
 
+function updateBlankStatus(state) {
+  chrome.storage.sync.set({'blank': state}, function() {});
+}
+
 window.addEventListener('load', function () {
 	checkSelection();
 
+	chrome.storage.sync.get('blank', function(items) {
+    document.getElementById("blank").checked = items['blank']
+  });
+
 	document.getElementById("custominput").addEventListener("focus", function() {
 		enableCustom();
+	});
+
+	document.getElementById("blank").addEventListener("click", function() {
+    updateBlankStatus(this.checked);
 	});
 
 	document.getElementById("custominput").addEventListener("blur", function() {

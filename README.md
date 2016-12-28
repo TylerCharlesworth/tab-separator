@@ -5,6 +5,7 @@
 - [x] Replaces new tab page.
 - [x] Customizable titles.
 - [x] Options for changing default title.
+- [x] Option for using blank page or not.
 
 ## Contributing
 1. Fork it!
@@ -18,6 +19,7 @@ See: [Chrome Web Store](https://chrome.google.com/webstore/detail/tab-separator/
 
 ## Contributors
 Creator: [Tyler Charlesworth](http://www.tylercharlesworth.com/)
+Contributor: [Jesse Claven](https://github.com/jesse-c/)
 
 ## Credits
 Fonts from [Google Web Fonts](https://www.google.com/fonts)
