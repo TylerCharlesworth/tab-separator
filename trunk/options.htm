@@ -1,19 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head><title>Tab Separator Options</title></head>
+<head>
+	<title>Tab Separator Options</title>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+	<link rel="stylesheet" href="lib/normalize-5.0.0.min.css">
+	<link rel="stylesheet" href="lib/milligram-1.2.4.min.css">
+
+	<link rel="stylesheet" type="text/css" href="options.css">
+	<script src="options.js" type="text/javascript"></script>
+	<script src="i18n.js" type="text/javascript"></script>
+</head>
 <body>
+<div class="container">
 
-<p>
-	<label title="Chrome does not allow this to be empty.">Default Title: <input type="text" id="def"></label>
-	<br />
-  <label title="Selects a random font on each new tab page."><input type="checkbox" id="fun"> Fun</label>
-  <br />
-  <input type="checkbox" id="blank" /><label title="Use blank page for new tab" for="blank">Use blank page for new tab</label>
-</p>
+	<div class="row">
 
-<button id="save">Save</button>
-<div id="status"></div>
+		<div class="column column-50">
+			<h1 data-i18n="options"></h1>
+			<h2 data-i18n="tab_title"></h2>
+			<p><label>New Tab Page Title: <input type="text" id="title"/></label></p>
+			<h2>Tab Page</h2>
+			<p><label><input type="checkbox" id="font"/> Random font on each new tab page</label></p>
+			<p><label>Rotating tab page contents:<br /><textarea id="content"></textarea></label></p>
+			<h2>Temporarily Disable</h2>
+			<p>
+				<label><input type="checkbox" id="disabled"/> Temporarily disable tab separators (show standard Chrome new tab page)
+					<span class="warning" style="color: red; font-weight: bold">Return here or use pop-up menu to re-enable!</span></label>
+			</p>
+			<p><button id="save">💾 Save</button></p>
+			<div id="status"></div>
+		</div>
 
-<script src="options.js"></script>
+		<div class="column column-40 column-offset-10">
+			<h1>Feedback</h1>
+			<h2>I love it!</h2>
+			<p>Please <a href="https://chrome.google.com/webstore/detail/tab-separator/loifmfjjhcdpgpkmphgemeooklpjlihp/reviews">review the extension</a> ☺</p>
+			<h2>I love it but...</h2>
+			<p>Please <a href="https://docs.google.com/forms/d/e/1FAIpQLSf7X1yki32ez2q9D0k_h2g767Wt5iGZsybyB8W3gvynCDuEOg/viewform">submit your feedback</a></p>
+			<p>Better yet: <a href="https://github.com/TylerCharlesworth/tab_separator">Contribute!</a></p>
+		</div>
+
+	</div>
+
+</div>
+
 </body>
 </html>

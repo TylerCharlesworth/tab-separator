@@ -1,0 +1,31 @@
+{
+	// basic extension info
+	"name": {
+		"message": "Tab Separator",
+		"description": "name of extension"
+	},
+	"description": {
+		"message": "Replaces new tab page with a blank page to separate groups of tabs.",
+		"description": "description of extension"
+	},
+
+	// widely used
+	"default_content": {
+		"message": "😴 New! Configure this message in Options:\n⛷️ New! Configure this message in Options:\n😊 New! Configure this message in Options:\n💩 New! Configure this message in Options:\n⚽ New! Configure this message in Options:\n🌅 New! Configure this message in Options:\n⛺ New! Configure this message in Options:\n🤔 New! Configure this message in Options:",
+		"description": "description of extension"
+	},
+	"default_title": {
+		"message": "\u200E",
+		"description": "description of extension"
+	},
+
+	// options usage
+	"options": {
+		"message": "Options"
+	},
+	"tab_title": {
+		"message": "Tab Title"
+	}
+
+	// popup usage
+}

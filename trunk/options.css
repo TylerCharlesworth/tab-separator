@@ -1,0 +1,13 @@
+#save {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+}
+
+#content {
+	height: 160px;
+}
+
+#disabled:not(:checked) + .warning {
+	display: none;
+}

@@ -1,5 +1,5 @@
 function checkSelection(title) {
-	chrome.tabs.query({ active: true, lastFocusedWindow: true }, function(tabs) {
+	chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs) {
 		var title = title || tabs[0].title;
 		var defaultslabel = document.getElementsByClassName("defaults-label");
 		var i = 0;
@@ -32,28 +32,25 @@ function enableCustom(title) {
 }
 
 function setTitle(title) {
-	chrome.tabs.query({ active: true, lastFocusedWindow: true }, function(tabs) {
+	chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs) {
 		chrome.tabs.sendMessage(tabs[0].id, title);
 	});
 }
 
-function updateBlankStatus(state) {
-  chrome.storage.sync.set({'blank': state}, function() {});
-}
+window.addEventListener('load', function() {
 
-window.addEventListener('load', function () {
 	checkSelection();
 
-	chrome.storage.sync.get('blank', function(items) {
-    document.getElementById("blank").checked = items['blank']
-  });
+	chrome.storage.local.get('disabled', function(items) {
+		document.getElementById("disabled").checked = items['disabled']
+	});
+
+	document.getElementById("disabled").addEventListener("click", function() {
+		chrome.storage.local.set({'disabled': this.checked});
+	});
 
 	document.getElementById("custominput").addEventListener("focus", function() {
 		enableCustom();
-	});
-
-	document.getElementById("blank").addEventListener("click", function() {
-    updateBlankStatus(this.checked);
 	});
 
 	document.getElementById("custominput").addEventListener("blur", function() {
@@ -67,7 +64,7 @@ window.addEventListener('load', function () {
 	var defaults = document.getElementsByClassName("defaults");
 	var i = 0;
 	for(; i < defaults.length; i++) {
-		defaults[i].addEventListener("change", function () {
+		defaults[i].addEventListener("change", function() {
 			this.focus();
 			var title = document.getElementById(this.id + "-label").innerText;
 			setTitle(title);
