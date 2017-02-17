@@ -8,6 +8,6 @@
 	height: 160px;
 }
 
-#disabled:not(:checked) + .warning {
-	display: none;
+.no-margin {
+	margin: 0px;
 }

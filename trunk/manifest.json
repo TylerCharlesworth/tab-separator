@@ -16,6 +16,9 @@
 		"persistent": false
 	},
 	"options_page": "options.htm",
+	"chrome_url_overrides": {
+		"newtab": "newtab.htm"
+	},
 	"page_action": {
 		"default_icon": {
 			"19": "images/page19.png",
@@ -26,8 +29,7 @@
 	"permissions": [
 		"storage",
 		"activeTab",
-		"declarativeContent",
-		"tabs"
+		"declarativeContent"
 	],
 	"default_locale": "en"
 }

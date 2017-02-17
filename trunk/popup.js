@@ -1,28 +1,35 @@
-function checkSelection(title) {
+function checkSelection() {
 	chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs) {
-		var title = title || tabs[0].title;
-		var defaultslabel = document.getElementsByClassName("defaults-label");
+		var title = tabs[0].title;
+		var defaults = document.getElementsByClassName("default");
 		var i = 0;
-		for(; i < defaultslabel.length; i++) {
-			if(defaultslabel[i].innerText === title) {
-				var selected = document.getElementById(defaultslabel[i].id.replace("-label", ""));
+		for(; i < defaults.length; i++) {
+			if(defaults[i].getAttribute("longtext") === title) {
+				var selected = defaults[i];
 				selected.checked = "checked";
 				selected.focus();
 				disableCustom(title);
 				break;
 			}
 		}
-		if(i === 3) { // no matching title found
+		if(i === defaults.length) { // no matching title found
 			enableCustom(title);
 		}
 	});
 }
 
+/**
+ * Update custom input field value but leave it "disabled"
+ * @param title current string shown as page title
+ */
 function disableCustom(title) {
 	document.getElementById("custominput").className = "disabled";
 	document.getElementById("custominput").value = title;
 }
-
+/**
+ * Update custom input field value and "enable" it for entry
+ * @param title current string shown as page title
+ */
 function enableCustom(title) {
 	document.getElementById("custom").checked = "checked";
 	var custominput = document.getElementById("custominput");
@@ -31,46 +38,58 @@ function enableCustom(title) {
 	if(title) custominput.value = title;
 }
 
+/**
+ * Update current tab page title
+ * @param title string to set as page title
+ */
 function setTitle(title) {
+	console.log(title);
+	var newtitle = title || chrome.i18n.getMessage("default_title");
+	console.log(title);
 	chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tabs) {
-		chrome.tabs.sendMessage(tabs[0].id, title);
+		chrome.tabs.sendMessage(tabs[0].id, newtitle);
 	});
 }
+document.addEventListener('DOMContentLoaded', function() {
 
-window.addEventListener('load', function() {
+	// add extension id to the end of desired links
+	[].forEach.call(document.getElementsByClassName("append_extension_id"), function(el) {
+		el.href += chrome.i18n.getMessage("@@extension_id");
+	});
+
+	// links from the popup should open in the tab
+	// preferred approach over adding target="_blank" to the links as this supports "chrome://" URLs
+	window.addEventListener('click',function(e) {
+		if(e.target.href!==undefined){
+			chrome.tabs.update({url: e.target.href});
+			window.close(); // close popup
+		}
+	});
 
 	checkSelection();
 
-	chrome.storage.local.get('disabled', function(items) {
-		document.getElementById("disabled").checked = items['disabled']
-	});
-
-	document.getElementById("disabled").addEventListener("click", function() {
-		chrome.storage.local.set({'disabled': this.checked});
-	});
+	for(radio of document.getElementsByClassName("default")) {
+		radio.addEventListener("change", function() {
+			this.focus();
+			var title = this.getAttribute("longtext");
+			if(title) {
+				setTitle(title);
+				disableCustom(title);
+			} else {
+				enableCustom();
+			}
+		});
+	}
 
 	document.getElementById("custominput").addEventListener("focus", function() {
 		enableCustom();
 	});
 
 	document.getElementById("custominput").addEventListener("blur", function() {
-		this.value = this.value || document.getElementsByClassName("defaults-label")[0].innerText;
-		setTitle(this.value);
 		window.setTimeout(function() {
 			checkSelection();
 		}, 200);
 	});
-
-	var defaults = document.getElementsByClassName("defaults");
-	var i = 0;
-	for(; i < defaults.length; i++) {
-		defaults[i].addEventListener("change", function() {
-			this.focus();
-			var title = document.getElementById(this.id + "-label").innerText;
-			setTitle(title);
-			disableCustom(title);
-		});
-	}
 
 	document.getElementById("custominput").addEventListener("keyup", function() {
 		setTitle(this.value);

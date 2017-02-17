@@ -4,7 +4,6 @@
 ## Features
 - [x] Replaces new tab page with a blank page.
 - [x] Customizable new tab titles (including totally blank).
-- [x] May be temporarily disabled (when default new tab page is desired).
 - [x] Optionally include text on new tab page (for quotes, etc.).
 
 ## Bugs?
