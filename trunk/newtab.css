@@ -1,3 +1,25 @@
+#options {
+	display: block;
+	width: 50px;
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	fill: #ddd;
+}
+
+#options:hover {
+	stroke: gray;
+}
+
+#content {
+	text-align:center;
+	color:white;
+	font-size:600%;
+	text-shadow:2px 2px 8px #bbb;
+	padding:0px 150px;
+	font-weight:bold;
+}
+
 .f0 {
 	font-family: "Proxima Nova Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
@@ -21,12 +43,12 @@
 }
 
 @font-face {
-	font-family: Condiment-Regular;
-	src: url(fonts/Condiment-Regular.ttf);
+	font-family: Ultra;
+	src: url(fonts/Ultra.ttf);
 }
 
 .f3 {
-	font-family: 'Condiment-Regular';
+	font-family: 'Ultra';
 }
 
 @font-face {
@@ -84,12 +106,12 @@
 }
 
 @font-face {
-	font-family: PinyonScript-Regular;
-	src: url(fonts/PinyonScript-Regular.ttf);
+	font-family: VT323-Regular;
+	src: url(fonts/VT323-Regular.ttf);
 }
 
 .f10 {
-	font-family: 'PinyonScript-Regular';
+	font-family: 'VT323-Regular';
 }
 
 @font-face {
@@ -117,22 +139,4 @@
 
 .f13 {
 	font-family: 'SueEllenFrancisco';
-}
-
-@font-face {
-	font-family: Ultra;
-	src: url(fonts/Ultra.ttf);
-}
-
-.f14 {
-	font-family: 'Ultra';
-}
-
-@font-face {
-	font-family: VT323-Regular;
-	src: url(fonts/VT323-Regular.ttf);
-}
-
-.f15 {
-	font-family: 'VT323-Regular';
 }

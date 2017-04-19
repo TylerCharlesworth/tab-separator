@@ -1,0 +1,13 @@
+#save {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+}
+
+#content {
+	height: 160px;
+}
+
+.no-margin {
+	margin: 0px;
+}

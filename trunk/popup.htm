@@ -2,22 +2,27 @@
 <html>
 <head lang="en">
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="lib/normalize-5.0.0.min.css">
+	<link rel="stylesheet" href="lib/milligram-1.2.4.min.css">
 	<link rel="stylesheet" type="text/css" href="popup.css">
+
 	<script type="text/javascript" src="popup.js"></script>
 </head>
 <body>
-<h2>Tab Separator Display</h2>
+<h2>Tab Separator</h2>
+<h3>Rename Current Tab</h3>
 
 <form>
-<div id="radio">
-	<input type="radio" id="dots" name="radio" class="defaults"><label class="defaults-label" id="dots-label" for="dots">. . .</label>
-	<input type="radio" id="slashes" name="radio" class="defaults"><label class="defaults-label" id="slashes-label" for="slashes">/&nbsp;/&nbsp;/</label>
-	<input type="radio" id="arrow" name="radio" class="defaults"><label class="defaults-label" id="arrow-label" for="arrow">&#8592;&nbsp;</label>
-	<br />
-  <input type="radio" id="custom" name="radio"><label for="custom"><input type="text" id="custominput" class="disabled" /></label>
-  <br />
-  <input type="checkbox" id="blank" /><label title="Use blank page for new tab" for="blank">Use blank page for new tab</label>
-</div>
+	<p>
+		<label id="dots"><input type="radio" class="default" name="radio" longtext=". . . . . . . . . . . . . . . . . . . . . . . . . . . ." />. . .</label>
+		<label id="slashes"><input type="radio" class="default" name="radio" longtext="/ / / / / / / / / / / / / / / / / / / / / / / / / / / /" />/&nbsp;/&nbsp;/</label>
+		<label id="arrow"><input type="radio" class="default" name="radio" longtext="⬅" />⬅</label>
+		<label><input type="radio" class="default" id="custom" name="radio"><input type="text" id="custominput" class="disabled" /></label>
+	</p>
+	<p class="center">
+		<a href="options.htm">⚙ Tab Separator Options</a>
+		<br /><a class="append_extension_id secondary" href="chrome://extensions/?id=">Manage Extensions</a>
+	</p>
 </form>
 
 </body>
